@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="301" affinity="minX"/>
+                        </userGuides>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTD-OV-ORD">
+                                <rect key="frame" x="468" y="535" width="30" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="剪切">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lLC-Hn-Tfa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uu9-GH-RF2">
+                                <rect key="frame" x="131" y="535" width="30" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="载入">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseSongTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ik-to-Sop"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="song" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mtJ-Cm-st5">
+                                <rect key="frame" x="72" y="55" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="artist" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rVm-oC-ZJn">
+                                <rect key="frame" x="72" y="84" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4QE-aR-Xfl">
+                                <rect key="frame" x="225" y="449" width="150" height="2"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-Qu-FAe">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="2"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tix-wH-KH9">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="2"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-cj-UeA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="2"/>
+                                                        <subviews>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PZ2-SG-zAw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="2"/>
+                                                            </progressView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-f9-XAA">
+                                <rect key="frame" x="169" y="148" width="263" height="241"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="0 bytes" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-eY-nAf">
+                                <rect key="frame" x="272" y="498" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="OTD-OV-ORD" secondAttribute="trailing" constant="82" id="253-BK-sqm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uu9-GH-RF2" secondAttribute="bottom" constant="35" id="3rb-7Q-WGa"/>
+                            <constraint firstItem="xtb-f9-XAA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GcJ-JO-xj9"/>
+                            <constraint firstItem="rVm-oC-ZJn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="Hsp-Jo-tQg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lps-eY-nAf" secondAttribute="trailing" constant="55" id="Va9-jG-Tdn"/>
+                            <constraint firstItem="4QE-aR-Xfl" firstAttribute="bottom" secondItem="xtb-f9-XAA" secondAttribute="bottom" constant="62" id="WNz-fu-Cmc"/>
+                            <constraint firstItem="mtJ-Cm-st5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="ZDa-AK-aM0"/>
+                            <constraint firstItem="xtb-f9-XAA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="128" id="aq0-l4-xGg"/>
+                            <constraint firstItem="4QE-aR-Xfl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c5R-3a-vjo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OTD-OV-ORD" secondAttribute="bottom" constant="35" id="cgh-PW-cop"/>
+                            <constraint firstItem="mtJ-Cm-st5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="iFb-JT-cwd"/>
+                            <constraint firstItem="Lps-eY-nAf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wjD-Vb-2pD"/>
+                            <constraint firstItem="uu9-GH-RF2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="111" id="yra-gN-LN6"/>
+                            <constraint firstItem="rVm-oC-ZJn" firstAttribute="top" secondItem="mtJ-Cm-st5" secondAttribute="bottom" constant="8" id="z6J-8c-uNO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Va9-jG-Tdn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="rVm-oC-ZJn" id="80q-n2-lK6"/>
+                        <outlet property="conversionProgress" destination="PZ2-SG-zAw" id="0F8-b5-tFH"/>
+                        <outlet property="coverArtView" destination="xtb-f9-XAA" id="pKy-Gf-re6"/>
+                        <outlet property="sizeLabel" destination="Lps-eY-nAf" id="3hy-5A-rKm"/>
+                        <outlet property="songLabel" destination="mtJ-Cm-st5" id="bVG-VK-Ws8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="-196"/>
+        </scene>
+        <!--Cutter View Controller-->
+        <scene sceneID="Rd8-aH-geg">
+            <objects>
+                <viewController storyboardIdentifier="CutterViewController" id="NX9-S1-LD0" customClass="CutterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qvI-gB-Q9Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="KFp-cz-vg9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="but-vf-7db">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8e-0s-adt" customClass="VoiPlot">
+                                <rect key="frame" x="0.0" y="20" width="600" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a8e-0s-adt" firstAttribute="leading" secondItem="but-vf-7db" secondAttribute="leadingMargin" constant="-20" id="8Ww-8r-XrM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a8e-0s-adt" secondAttribute="trailing" constant="-20" id="RcE-IC-CHb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioPlot" destination="a8e-0s-adt" id="7rv-2f-E7f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHn-tq-LEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="-193"/>
+        </scene>
+    </scenes>
+</document>
