@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4F79221BCE04200060C16A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79211BCE04200060C16A /* BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		5A8D347A1BCFA87D00C7ABA6 /* CutterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D34791BCFA87D00C7ABA6 /* CutterView.m */; settings = {ASSET_TAGS = (); }; };
+		5A9404071BCDF59D00051893 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9404061BCDF59D00051893 /* RecordViewController.m */; settings = {ASSET_TAGS = (); }; };
 		5AA2EF331BCCF4B000420B2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2EF321BCCF4B000420B2F /* main.m */; };
 		5AA2EF361BCCF4B000420B2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2EF351BCCF4B000420B2F /* AppDelegate.m */; };
 		5AA2EF391BCCF4B000420B2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2EF381BCCF4B000420B2F /* ViewController.m */; };
@@ -41,6 +44,13 @@
 /* Begin PBXFileReference section */
 		08C65FCFF0AEBAB53A540760 /* Pods-Voicutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voicutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voicutter/Pods-Voicutter.release.xcconfig"; sourceTree = "<group>"; };
 		46D070F2255421DAFBE9C7F3 /* libPods-Voicutter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Voicutter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4F791F1BCE03F10060C16A /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
+		5A4F79201BCE04200060C16A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5A4F79211BCE04200060C16A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		5A8D34781BCFA87D00C7ABA6 /* CutterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutterView.h; sourceTree = "<group>"; };
+		5A8D34791BCFA87D00C7ABA6 /* CutterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutterView.m; sourceTree = "<group>"; };
+		5A9404051BCDF59D00051893 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		5A9404061BCDF59D00051893 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		5AA2EF2E1BCCF4B000420B2F /* Voicutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voicutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA2EF321BCCF4B000420B2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AA2EF341BCCF4B000420B2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,10 +145,17 @@
 			children = (
 				5AA2EF341BCCF4B000420B2F /* AppDelegate.h */,
 				5AA2EF351BCCF4B000420B2F /* AppDelegate.m */,
+				5A4F791F1BCE03F10060C16A /* NotificationKeys.h */,
+				5A4F79201BCE04200060C16A /* BaseViewController.h */,
+				5A4F79211BCE04200060C16A /* BaseViewController.m */,
 				5AA2EF371BCCF4B000420B2F /* ViewController.h */,
 				5AA2EF381BCCF4B000420B2F /* ViewController.m */,
+				5A8D34781BCFA87D00C7ABA6 /* CutterView.h */,
+				5A8D34791BCFA87D00C7ABA6 /* CutterView.m */,
 				5AA2EF641BCCFA7600420B2F /* CutterViewController.h */,
 				5AA2EF651BCCFA7600420B2F /* CutterViewController.m */,
+				5A9404051BCDF59D00051893 /* RecordViewController.h */,
+				5A9404061BCDF59D00051893 /* RecordViewController.m */,
 				5AA2EF6A1BCD04B500420B2F /* simple-drum-beat.wav */,
 				5AA2EF671BCCFF6700420B2F /* VoiPlot.h */,
 				5AA2EF681BCCFF6700420B2F /* VoiPlot.m */,
@@ -344,9 +361,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA2EF391BCCF4B000420B2F /* ViewController.m in Sources */,
+				5A8D347A1BCFA87D00C7ABA6 /* CutterView.m in Sources */,
 				5AA2EF361BCCF4B000420B2F /* AppDelegate.m in Sources */,
 				5AA2EF331BCCF4B000420B2F /* main.m in Sources */,
+				5A9404071BCDF59D00051893 /* RecordViewController.m in Sources */,
 				5AA2EF691BCCFF6700420B2F /* VoiPlot.m in Sources */,
+				5A4F79221BCE04200060C16A /* BaseViewController.m in Sources */,
 				5AA2EF661BCCFA7600420B2F /* CutterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

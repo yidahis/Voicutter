@@ -3,10 +3,48 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[RecordViewController toggleRecording:]:RecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self testFilePathURL]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CutterViewController openFileWithFilePathURL:]:CutterViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "_assetURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController recordFinsh:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "noti">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController convertTapped:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "vc.songUrl">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__32-[RecordViewController popBack:]_block_invoke:RecordViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[RecordViewController popBack:]:RecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.recorder.url absoluteString]">
+            </PersistentString>
+            <PersistentString
+               value = "self.recorder.url">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

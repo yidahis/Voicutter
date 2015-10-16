@@ -6,10 +6,11 @@
 //  Copyright 2011 no. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-@interface ViewController : UIViewController <MPMediaPickerControllerDelegate> {
+
+@interface ViewController : BaseViewController <MPMediaPickerControllerDelegate> {
     MPMediaItem *song;
     
     UILabel *songLabel;
@@ -21,12 +22,15 @@
 }
 @property (nonatomic, retain) IBOutlet UILabel *songLabel;
 @property (nonatomic, retain) IBOutlet UILabel *artistLabel;
+@property (weak, nonatomic) IBOutlet UILabel *filePathLabel;
+
 @property (nonatomic, retain) IBOutlet UILabel *sizeLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *coverArtView;
 @property (nonatomic, retain) IBOutlet UIProgressView *conversionProgress;
 
 -(IBAction) chooseSongTapped: (id) sender;
 -(IBAction) convertTapped: (id) sender;
+- (IBAction)recordTaped:(id)sender;
 
 
 @end

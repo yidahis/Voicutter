@@ -15,9 +15,9 @@
 /**
  Here's the default audio file included with the example
  */
-#define kAudioFileDefault [[NSBundle mainBundle] pathForResource:@"simple-drum-beat" ofType:@"wav"]
+#define kAudioFileDefault [[NSBundle mainBundle] pathForResource:@"小苹果" ofType:@"m4a"]
 
-@interface CutterViewController : UIViewController
+@interface CutterViewController : UIViewController<EZAudioPlayerDelegate,EZMicrophoneDelegate>
 #pragma mark - Components
 /**
  The EZAudioFile representing of the currently selected audio file
@@ -29,6 +29,10 @@
  */
 @property (nonatomic,weak) IBOutlet VoiPlot *audioPlot;
 
+/**
+ The audio player that will play the recorded file
+ */
+@property (nonatomic, strong) EZAudioPlayer *player;
 
 /**
  A BOOL indicating whether or not we've reached the end of the file
@@ -41,6 +45,6 @@
  */
 @property (nonatomic,weak) IBOutlet UILabel *filePathLabel;
 
-@property(strong,nonatomic)NSURL *songUrl;
+@property(strong,nonatomic)NSString *filePath;
 
 @end

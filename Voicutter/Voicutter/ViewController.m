@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "CutterViewController.h"
-
+#import "RecordViewController.h"
 
 #define EXPORT_NAME @"exported.caf"
 @implementation ViewController
@@ -31,6 +31,33 @@
     [super viewDidAppear:animated];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(recordFinsh:) name:kRecordFinsh object:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)recordFinsh:(NSNotification*)noti{
+    self.filePathLabel.text  = [NSString stringWithFormat:@"%@",noti.object];
+    
+    UInt64 convertedByteCount = [[self dataSize:noti.object] longValue];
+    self.sizeLabel.text = [NSString stringWithFormat: @"%llu bytes converted", convertedByteCount];
+}
+
+- (NSNumber*)dataSize:(NSString*)path{
+    NSDictionary *outputFileAttributes = [[NSFileManager defaultManager]
+                                          attributesOfItemAtPath:path
+                                          error:nil];
+    NSLog (@"done. file size is %llu",
+           [outputFileAttributes fileSize]);
+    return [NSNumber numberWithLong:[outputFileAttributes fileSize]];
+}
+
 #pragma mark event handlers
 
 -(IBAction) chooseSongTapped: (id) sender {
@@ -47,8 +74,16 @@
 -(IBAction) convertTapped: (id) sender {
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CutterViewController *vc = [board instantiateViewControllerWithIdentifier:@"CutterViewController"];
-    vc.songUrl = [self convertToMp3:song];
+    vc.filePath = self.filePathLabel.text;
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (IBAction)recordTaped:(id)sender {
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RecordViewController *vc = [board instantiateViewControllerWithIdentifier:@"RecordViewController"];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+    
 }
 
 -(void) updateSizeLabel: (NSNumber*) convertedByteCountNumber {

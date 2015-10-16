@@ -24,7 +24,26 @@
 {
     [super viewDidLoad];
     
-
+    //
+    // Setup the AVAudioSession. EZMicrophone will not work properly on iOS
+    // if you don't do this!
+    //
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *error;
+    [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    if (error)
+    {
+        NSLog(@"Error setting up audio session category: %@", error.localizedDescription);
+    }
+    [session setActive:YES error:&error];
+    if (error)
+    {
+        NSLog(@"Error setting up audio session active: %@", error.localizedDescription);
+    }
+    
+    
+    self.player = [EZAudioPlayer audioPlayerWithDelegate:self];
+    self.player.volume = 1.0f;
     
     //
     // Customizing the audio plot's look
@@ -50,7 +69,11 @@
     //
     // Load in the sample file
     //
-    [self openFileWithFilePathURL:self.songUrl];
+    [self openFileWithFilePathURL:[NSURL URLWithString:self.filePath]];
+    
+    
+    
+    
 }
 
 //------------------------------------------------------------------------------
@@ -68,17 +91,49 @@
     self.audioPlot.plotType     = EZPlotTypeBuffer;
     self.audioPlot.shouldFill   = YES;
     self.audioPlot.shouldMirror = YES;
-    
+    self.audioPlot.gain = 2.5f;
     __weak typeof (self) weakSelf = self;
     [self.audioFile getWaveformDataWithCompletionBlock:^(float **waveformData,
                                                          int length)
      {
+         NSLog(@"%d",length);
          [weakSelf.audioPlot updateBuffer:waveformData[0]
                            withBufferSize:length];
      }];
 }
 
 //------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+#pragma mark - EZAudioPlayerDelegate
+//------------------------------------------------------------------------------
+
+- (void) audioPlayer:(EZAudioPlayer *)audioPlayer
+         playedAudio:(float **)buffer
+      withBufferSize:(UInt32)bufferSize
+withNumberOfChannels:(UInt32)numberOfChannels
+         inAudioFile:(EZAudioFile *)audioFile
+{
+    __weak typeof (self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+//        [weakSelf.playingAudioPlot updateBuffer:buffer[0]
+//                                 withBufferSize:bufferSize];
+    });
+}
+
+//------------------------------------------------------------------------------
+
+- (void)audioPlayer:(EZAudioPlayer *)audioPlayer
+    updatedPosition:(SInt64)framePosition
+        inAudioFile:(EZAudioFile *)audioFile
+{
+    __weak typeof (self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+//        weakSelf.currentTimeLabel.text = [audioPlayer formattedCurrentTime];
+    });
+}
+
 
 - (void)cutterBegain{
     
